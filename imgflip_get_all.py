@@ -15,7 +15,9 @@ def lay_chi_tiet(url):
         image = page.query_selector("img.mm-img").get_attribute("src")
 
         print(f"{title}: https://imgflip.com{image}")
-
+        # Save to 'flipoutput.txt'
+        with open("flipoutput.txt", "a") as file:
+            file.write(f"{title},https://imgflip.com{image}\n")
         # Close the browser
         browser.close()
 
